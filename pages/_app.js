@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import { theme } from "../styles/theme";
 import Header from "../components/Header";
 import Notifier from "../components/Notifier";
+import "../styles/globals.css";
 
 const propTypes = {
   Component: PropTypes.elementType.isRequired,

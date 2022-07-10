@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import PoolList from "../components/PoolList";
 import { getPoolsListApiMethod } from "../api/pools";
 import notify from "../helpers/notify";
-
 // Type check
 const defaultProps = { pools: [] };
 const propTypes = {
