@@ -6,6 +6,7 @@ import Head from "next/head";
 import PropTypes from "prop-types";
 import { theme } from "../styles/theme";
 import Header from "../components/Header";
+import Notifier from "../components/Notifier";
 
 const propTypes = {
   Component: PropTypes.elementType.isRequired,
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }) {
         <CssBaseline />
         <Header {...pageProps} />
         <Component {...pageProps} />
+        <Notifier />
       </ThemeProvider>
     </CacheProvider>
   );
