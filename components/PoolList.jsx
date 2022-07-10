@@ -1,10 +1,7 @@
+import Grid from "@mui/material/Grid";
 import PropTypes from "prop-types";
-import PoolList from "../components/PoolList";
-import { getPoolsListApiMethod } from "../api/pools";
-import notify from "../helpers/notify";
+import Pool from "./Pool";
 
-// Type check
-const defaultProps = { pools: [] };
 const propTypes = {
   pools: PropTypes.arrayOf(
     PropTypes.shape({
@@ -27,20 +24,23 @@ const propTypes = {
   ),
 };
 
-export default function Home({ pools }) {
-  return <PoolList pools={pools} />;
+const defaultProps = {
+  pools: [],
+};
+
+export default function PoolList({ pools }) {
+  return (
+    <Grid container spacing={2} justifyContent="center">
+      {pools.map((pool) => {
+        return (
+          <Grid item xs={4} key={pool.id}>
+            <Pool {...pool} />
+          </Grid>
+        );
+      })}
+    </Grid>
+  );
 }
-// This gets called on every request
-export async function getServerSideProps() {
-  // Call an external API endpoint to get pools
-  try {
-    const pools = await getPoolsListApiMethod();
-    // Pass data to the page via props
-    return { props: { pools } };
-  } catch (error) {
-    notify(error);
-    return { props: {} };
-  }
-}
-Home.propTypes = propTypes;
-Home.defaultProps = defaultProps;
+
+PoolList.propTypes = propTypes;
+PoolList.defaultProps = defaultProps;
