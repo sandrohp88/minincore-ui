@@ -1,0 +1,114 @@
+{
+  "pools": [
+    {
+      "id": "xmr1",
+      "coin": {
+        "type": "XMR"
+      },
+      "ports": {
+        "4032": {
+          "difficulty": 1600.0,
+          "varDiff": {
+            "minDiff": 1600.0,
+            "maxDiff": 160000.0,
+            "targetTime": 15.0,
+            "retargetTime": 90.0,
+            "variancePercent": 30.0
+          }
+        },
+        "4256": {
+          "difficulty": 5000.0
+        }
+      },
+      "paymentProcessing": {
+        "enabled": true,
+        "minimumPayment": 0.01,
+        "payoutScheme": "PPLNS",
+        "payoutSchemeConfig": {
+          "factor": 2.0
+        },
+        "minimumPaymentToPaymentId": 5.0
+      },
+      "banning": {
+        "enabled": true,
+        "checkThreshold": 50,
+        "invalidPercent": 50.0,
+        "time": 600
+      },
+      "clientConnectionTimeout": 600,
+      "jobRebroadcastTimeout": 55,
+      "blockRefreshInterval": 1000,
+      "poolFeePercent": 0.0,
+      "address": "9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8",
+      "addressInfoLink": "https://explorer.zcha.in/accounts/9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8",
+      "poolStats": {
+        "connectedMiners": 3960,
+        "poolHashRate": 15987.6
+      },
+      "networkStats": {
+        "networkType": "Test",
+        "networkHashRate": 39.05,
+        "networkDifficulty": 2343.0,
+        "lastNetworkBlockTime": "2017-09-17T10:35:55.0394813Z",
+        "blockHeight": 157,
+        "connectedPeers": 2,
+        "rewardType": "POW"
+      }
+    },
+    {
+      "id": "ergo1",
+      "coin": {
+        "type": "ERG"
+      },
+      "ports": {
+        "4032": {
+          "difficulty": 1600.0,
+          "varDiff": {
+            "minDiff": 1600.0,
+            "maxDiff": 160000.0,
+            "targetTime": 15.0,
+            "retargetTime": 90.0,
+            "variancePercent": 30.0
+          }
+        },
+        "4256": {
+          "difficulty": 5000.0
+        }
+      },
+      "paymentProcessing": {
+        "enabled": true,
+        "minimumPayment": 0.01,
+        "payoutScheme": "PPLNS",
+        "payoutSchemeConfig": {
+          "factor": 2.0
+        },
+        "minimumPaymentToPaymentId": 5.0
+      },
+      "banning": {
+        "enabled": true,
+        "checkThreshold": 50,
+        "invalidPercent": 50.0,
+        "time": 600
+      },
+      "clientConnectionTimeout": 600,
+      "jobRebroadcastTimeout": 55,
+      "blockRefreshInterval": 1000,
+      "poolFeePercent": 0.0,
+      "address": "9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8",
+      "addressInfoLink": "https://explorer.zcha.in/accounts/9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8",
+      "poolStats": {
+        "connectedMiners": 14432,
+        "poolHashRate": 2434.6
+      },
+      "networkStats": {
+        "networkType": "Test",
+        "networkHashRate": 533.05,
+        "networkDifficulty": 23423.0,
+        "lastNetworkBlockTime": "2017-09-17T10:35:55.0394813Z",
+        "blockHeight": 157,
+        "connectedPeers": 2,
+        "rewardType": "POW"
+      }
+    }
+  ]
+}
