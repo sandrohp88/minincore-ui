@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import PoolList from "../components/PoolList";
 import { getPoolsListApiMethod } from "../api/pools";
 import notify from "../helpers/notify";
+import Miner from "./miner/[minerId]";
 // Type check
 const defaultProps = { pools: [] };
 const propTypes = {
@@ -15,12 +16,12 @@ const propTypes = {
         payoutScheme: PropTypes.string.isRequired,
       }),
       networkStats: PropTypes.shape({
-        networkHashRate: PropTypes.number.isRequired,
+        networkHashrate: PropTypes.number.isRequired,
         networkDifficulty: PropTypes.number.isRequired,
       }),
       poolStats: PropTypes.shape({
         connectedMiners: PropTypes.number.isRequired,
-        poolHashRate: PropTypes.number.isRequired,
+        poolHashrate: PropTypes.number.isRequired,
       }),
     }),
   ),
@@ -33,7 +34,7 @@ export default function Home({ pools }) {
 export async function getServerSideProps() {
   // Call an external API endpoint to get pools
   try {
-    const pools = await getPoolsListApiMethod();
+    const { pools } = await getPoolsListApiMethod();
     // Pass data to the page via props
     return { props: { pools } };
   } catch (error) {
