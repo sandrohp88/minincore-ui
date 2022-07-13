@@ -1,12 +1,17 @@
+/* eslint-disable react/jsx-no-bind */
+import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import { CardHeader, List, ListItem, ListItemText } from "@mui/material";
 import Button from "@mui/material/Button";
+import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
 import AdbIcon from "@mui/icons-material/Adb";
 import Avatar from "@mui/material/Avatar";
 import Grid from "@mui/material/Grid";
 import PropTypes from "prop-types";
+import { useRouter } from "next/router";
 
 const propTypes = {
   pool: PropTypes.shape({
@@ -18,12 +23,12 @@ const propTypes = {
       payoutScheme: PropTypes.string.isRequired,
     }),
     networkStats: PropTypes.shape({
-      networkHashRate: PropTypes.number.isRequired,
+      networkHashrate: PropTypes.number.isRequired,
       networkDifficulty: PropTypes.number.isRequired,
     }),
     poolStats: PropTypes.shape({
       connectedMiners: PropTypes.number.isRequired,
-      poolHashRate: PropTypes.number.isRequired,
+      poolHashrate: PropTypes.number.isRequired,
     }),
   }),
 };
@@ -34,11 +39,18 @@ const defaultProps = {
 export default function Pool(pool) {
   const coinType = pool.coin.type;
   const { payoutScheme, minimumPayment } = pool.paymentProcessing;
-  const { networkHashRate, networkDifficulty } = pool.networkStats;
-  const { connectedMiners, poolHashRate } = pool.poolStats;
-
+  const { networkHashrate, networkDifficulty } = pool.networkStats;
+  const { connectedMiners, poolHashrate } = pool.poolStats;
+  const router = useRouter();
+  const [search, setSearch] = useState();
+  function onClickHandler() {
+    router.push(`/miner/${search}`);
+  }
+  function searchInputHandler(event) {
+    setSearch(event.target.value);
+  }
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 275 }} className="rounded-lg">
       <CardHeader
         style={{ background: "#263238", color: "white" }}
         title={coinType}
@@ -56,7 +68,7 @@ export default function Pool(pool) {
                 <ListItemText primary="Pool hashrate" />
               </Grid>
               <Grid item xs={6} textAlign="right">
-                <ListItemText primary={poolHashRate} />
+                <ListItemText primary={poolHashrate} />
               </Grid>
             </Grid>
           </ListItem>
@@ -96,7 +108,7 @@ export default function Pool(pool) {
                 <ListItemText primary="Network Hashrate" />
               </Grid>
               <Grid item xs={6} textAlign="right">
-                <ListItemText primary={networkHashRate} />
+                <ListItemText primary={networkHashrate} />
               </Grid>
             </Grid>
           </ListItem>
@@ -112,9 +124,10 @@ export default function Pool(pool) {
           </ListItem>
         </List>
       </CardContent>
-      <CardActions style={{ justifyContent: "flex-end" }}>
-        <Button size="small" color="secondary" variant="contained">
-          Go to pool
+      <CardActions className="justify-center pt-0 ">
+        <InputBase className="rounded-lg bg-slate-200 w-full" onInput={searchInputHandler} />
+        <Button onClick={onClickHandler} variant="contained" className=" bg-slate-400">
+          <SearchIcon />
         </Button>
       </CardActions>
     </Card>

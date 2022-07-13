@@ -13,12 +13,12 @@ const propTypes = {
         payoutScheme: PropTypes.string.isRequired,
       }),
       networkStats: PropTypes.shape({
-        networkHashRate: PropTypes.number.isRequired,
+        networkHashrate: PropTypes.number.isRequired,
         networkDifficulty: PropTypes.number.isRequired,
       }),
       poolStats: PropTypes.shape({
         connectedMiners: PropTypes.number.isRequired,
-        poolHashRate: PropTypes.number.isRequired,
+        poolHashrate: PropTypes.number.isRequired,
       }),
     }),
   ),
