@@ -52,7 +52,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   try {
     const fetchedMiner = await getMinerStatsApiMethod(params.minerId);
-    console.log(fetchedMiner);
     return {
       props: {
         miner: fetchedMiner,
