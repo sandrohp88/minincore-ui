@@ -1,4 +1,4 @@
-const port = process.env.PORT || 3004;
+const port = process.env.PORT || 4000;
 const ROOT_URL = process.env.ROOT_URL || `http://localhost:${port}`;
 
 export default async function sendRequest(path, options = {}) {

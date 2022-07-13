@@ -1,4 +1,33 @@
 {
+  "miners": [
+    {
+      "results": {
+        "address": "9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8",
+        "pendingShares": 16000,
+        "pendingBalance": 1.23,
+        "totalPaid": 0,
+        "lastPayment": null,
+        "lastPaymentLink": null,
+        "performance": {
+          "created": "2017-12-29T13:07:23.845444",
+          "workers": {
+            "worker1": {
+              "hashrate": 1000,
+              "sharesPerSecond": 0.0008333333333333334
+            },
+            "worker2": {
+              "hashrate": 2000,
+              "sharesPerSecond": 0.001666666
+            }
+          }
+        },
+        "success": true,
+        "responseMessageType": 0,
+        "responseMessageId": null,
+        "responseMessageArgs": null
+      }
+    }
+  ],
   "pools": [
     {
       "id": "xmr1",
@@ -43,11 +72,11 @@
       "addressInfoLink": "https://explorer.zcha.in/accounts/9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8",
       "poolStats": {
         "connectedMiners": 3960,
-        "poolHashRate": 15987.6
+        "poolHashrate": 15987.6
       },
       "networkStats": {
         "networkType": "Test",
-        "networkHashRate": 39.05,
+        "networkHashrate": 39.05,
         "networkDifficulty": 2343.0,
         "lastNetworkBlockTime": "2017-09-17T10:35:55.0394813Z",
         "blockHeight": 157,
@@ -98,11 +127,11 @@
       "addressInfoLink": "https://explorer.zcha.in/accounts/9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8",
       "poolStats": {
         "connectedMiners": 14432,
-        "poolHashRate": 2434.6
+        "poolHashrate": 2434.6
       },
       "networkStats": {
         "networkType": "Test",
-        "networkHashRate": 533.05,
+        "networkHashrate": 533.05,
         "networkDifficulty": 23423.0,
         "lastNetworkBlockTime": "2017-09-17T10:35:55.0394813Z",
         "blockHeight": 157,

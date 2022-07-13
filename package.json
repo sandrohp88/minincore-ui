@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint **/*.js **/*.jsx",
-    "fake-api": "json-server --watch api/fake-api/db.json --port 3004"
+    "fake-api": "json-server --watch api/fake-api/db.json --port 3004 --routes api/fake-api/routes.json"
   },
   "dependencies": {
     "@emotion/cache": "^11.9.3",
