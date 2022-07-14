@@ -12,6 +12,7 @@ import Avatar from "@mui/material/Avatar";
 import Grid from "@mui/material/Grid";
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
+import { formatHashrate } from "../helpers/workersOnline";
 
 const propTypes = {
   pool: PropTypes.shape({
@@ -68,7 +69,7 @@ export default function Pool(pool) {
                 <ListItemText primary="Pool hashrate" />
               </Grid>
               <Grid item xs={6} textAlign="right">
-                <ListItemText primary={poolHashrate} />
+                <ListItemText primary={formatHashrate(poolHashrate)} />
               </Grid>
             </Grid>
           </ListItem>
@@ -108,7 +109,7 @@ export default function Pool(pool) {
                 <ListItemText primary="Network Hashrate" />
               </Grid>
               <Grid item xs={6} textAlign="right">
-                <ListItemText primary={networkHashrate} />
+                <ListItemText primary={formatHashrate(networkHashrate * 1000000000)} />
               </Grid>
             </Grid>
           </ListItem>
@@ -118,7 +119,7 @@ export default function Pool(pool) {
                 <ListItemText primary="Network Difficulty" />
               </Grid>
               <Grid item xs={6} textAlign="right">
-                <ListItemText primary={networkDifficulty} />
+                <ListItemText primary={formatHashrate(networkDifficulty)} />
               </Grid>
             </Grid>
           </ListItem>

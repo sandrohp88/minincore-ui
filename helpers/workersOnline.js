@@ -51,12 +51,12 @@ const formatHashrateType = {
   decimals: PropTypes.number,
 };
 
-function formatHashrate(hash, decimals = 2) {
+export function formatHashrate(hash, decimals = 2) {
   if (hash === 0) return "0 H";
 
   const k = 1000;
   const dm = decimals < 0 ? 0 : decimals;
-  const sizes = ["H/S", "KH/S", "MH/S", "GH/S", "TH/S"];
+  const sizes = ["H/S", "KH/S", "MH/S", "GH/S", "TH/S", "PH/S"];
 
   const i = Math.floor(Math.log(hash) / Math.log(k));
 
